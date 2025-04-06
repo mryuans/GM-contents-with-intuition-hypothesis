@@ -30,10 +30,8 @@ class PixelDot(Scene):
 
         self.add(particles, paths)
         
-        # 定义更新函数（每个粒子独立更新）
         def update_system(mobs, dt):
             for particle, path in zip(particles, paths):
-                # 生成随机位移
                 dx = np.random.normal(0, step_scale) 
                 dy = np.random.normal(0, step_scale)
                 particle.shift(dx*RIGHT + dy*UP)
